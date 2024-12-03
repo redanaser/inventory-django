@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not created %}
+    
+<div style="margin-top: 30px;">
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% comment %}
+    
+    <input type="text" name="title" placeholder="TITLE"/>
+    <br>
+    <textarea name="content" placeholder="CONTENT"></textarea>
+    <br>
+    {% endcomment %}
+    <button type="submit" style="margin-top: 30px;"/> Create article </button>
+
+</form>
+</div>
+ 
+
+    
+
+{% else %}
+<p>you have created new article with the title of <a href="/articles/{{ object.id }}">{{object.ti}}</a></p>
+
+{% endif %}
+    
+{% endblock content %}
+    

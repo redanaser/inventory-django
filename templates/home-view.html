@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color: chocolate;">HELLO WORLD</h1>
+<h2>{{ title }}   (id : {{ id }})</h2>
+<p>{{ content }}</p>
+<ul>
+    {% for x in object_list %}
+        {% if x.ti %}
+            <li><a href='/articles/{{ x.id }}/'>{{ x.ti }} - {{ x.co }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+    
